@@ -8,12 +8,19 @@
 const request = require('supertest');
 const express = require('express');
 const router = require('../../src/app');
+const mongoose = require('mongoose');
 
 // Create an instance of the Express app
 const app = express();
 app.use('/', router);
 
 describe('GET /api', () => {
+  // Close the database connection after all tests
+  afterAll(async () => {
+    await mongoose.connection.close();
+    console.log('Database connection closed');
+  });
+
   it('should return status 200', async () => {
     const response = await request(app).get('/api');
     expect(response.status).toBe(200);
