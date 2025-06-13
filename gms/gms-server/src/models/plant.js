@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 let plantSchema = new Schema({
   name: {
     type: String,
-    required: [true, 'Plant name is required'],
+    required: [true, 'Plant name is required'], // validations
     minlength: [3, 'Plant name must be at least 3 characters'],
     maxlength: [100, 'Plant name cannot exceed 100 characters']
   },
@@ -37,8 +37,8 @@ let plantSchema = new Schema({
   }
 });
 
-plantSchema.pre('save', function(next) {
-  if (!this.isNew) {
+plantSchema.pre('save', function(next) {  // pre db hook
+  if (!this.isNew) {  // when record saved, date modified is updated
     this.dateModified = new Date();
   }
   next();
