@@ -49,9 +49,13 @@ gardenSchema.path('name').validate(function(val) {
 // If the document is new, increment the gardenId
 // If the document is not new, update the dateModified
 gardenSchema.pre('validate', async function(next) {
-  let doc = this;
+  let doc = this; // this points to mongoose.Document.  why?  because pre is a method of Document, not the gardenSchema schema ?
+                  // isn't that skipping a level ?
 
-  if (this.isNew) {
+  //doc.pre('', function(){});
+
+  // why not doc.isNew ?
+  if (this.isNew) { // if document.isNew == true
     try {
       const counter = await Counter.findByIdAndUpdate(
         { _id: 'gardenId' },
@@ -65,6 +69,7 @@ gardenSchema.pre('validate', async function(next) {
       next(err);
     }
   } else {
+    // why not this.dateModified ?
     doc.dateModified = new Date(); next();
   }
 });

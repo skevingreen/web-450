@@ -15,14 +15,15 @@ const { notFoundHandler, errorHandler } = require('./error-handler');
 
 // Importing the index router
 const indexRouter = require('./routes/index');
-//const gardenRouter = require('./routes/garden');
-//const plantRouter = require('./routes/plant');
+const gardenRouter = require('./routes/garden');
+const plantRouter = require('./routes/plant');
 
 // Variable declaration for the express app
 let app = express();
 
 // Mongoose connection
-const connectionString = 'mongodb+srv://gms_user:s3cret@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
+//const connectionString = 'mongodb+srv://gms_user:s3cret@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
+const connectionString = 'mongodb+srv://gms_user:s3cret@cluster0.lujih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'gms'; // Database name
 
 // Function to connect to the database
@@ -56,8 +57,8 @@ app.use(cookieParser());
 
 // Routing configuration
 app.use('/api', indexRouter);
-//app.use('/api/gardens', gardenRouter);
-//app.use('/api/plants', plantRouter);
+app.use('/api/gardens', gardenRouter);
+app.use('/api/plants', plantRouter);
 
 // Use the error handling middleware
 app.use(notFoundHandler);
