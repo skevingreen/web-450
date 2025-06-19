@@ -51,12 +51,6 @@ describe('Plant API', () => {
         status: 'Planted' // Ensure all required properties are included
       });
 
-      // console.log("skg response.error: " + response.error);
-      // console.log("skg response.type: " + response.type);
-      // console.log("skg response.message: " + response.message);
-      // console.log("skg response.status: " + response.status);
-
-
       expect(response.status).toBe(200);
       expect(response.body.message).toBe('Plant created successfully');
     });
