@@ -22,8 +22,8 @@ const plantRouter = require('./routes/plant');
 let app = express();
 
 // Mongoose connection
-//const connectionString = 'mongodb+srv://gms_user:s3cret@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
-const connectionString = 'mongodb+srv://gms_user:s3cret@cluster0.lujih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const connectionString = 'mongodb+srv://gms_user:ZilsSUvq53DIks5y@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
+//const connectionString = 'mongodb+srv://gms_user:s3cret@cluster0.lujih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'gms'; // Database name
 
 // Function to connect to the database
@@ -33,7 +33,7 @@ async function connectToDatabase() {
       dbName: dbName
     });
 
-    //console.log(`Connection to the '${dbName}' database was successful`);
+    console.log(`Connection to the '${dbName}' database was successful`);
   } catch(err) {
     console.error(`MongoDB connection error: ${err}`);
   }
