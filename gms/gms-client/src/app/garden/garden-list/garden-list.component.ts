@@ -48,13 +48,15 @@ import { RouterLink } from '@angular/router';
     </div>
 `,
 styles: `
-  .garden-page { max-width: 80%;
+  .garden-page {
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
   }
 
   .garden-page__title {
-     text-align: center; color: #563d7c;
+     text-align: center;
+     color: #563d7c;
   }
 
   .garden-page__table {
@@ -108,7 +110,7 @@ styles: `
     cursor: pointer;
     border-radius: 5px
     transition: background-color 0.3s;
-    }
+  }
 
   .garden-page__button:hover {
     background-color: #6c757d;
@@ -132,6 +134,7 @@ styles: `
     color: #3c763d;
     background-color: #dﬀ0d8;
     border-color: #d6e9c6;
+  }
 `
 })
 export class GardenListComponent {
