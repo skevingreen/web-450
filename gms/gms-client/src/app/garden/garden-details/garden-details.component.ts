@@ -65,7 +65,8 @@ styles: `
     margin-top: 20px;
   }
 
-  .garden-details-page__form { display: ﬂex;
+  .garden-details-page__form {
+    display: ﬂex;
     ﬂex-direction: column;
   }
 
@@ -103,7 +104,7 @@ styles: `
   .garden-details-page__link {
     color: #563d7c;
     text-decoration: none;
-    display: block;"
+    display: block;
   }
 
   .garden-details-page__link:hover {
