@@ -37,7 +37,7 @@ describe('PlantListComponent', () => {
     component.plants = mockPlants;
     fixture.detectChanges(); // Trigger change detection
 
-    const plantRows = fixture.debugElement.queryAll(By.css('.plant-page__table-body .plantpage__table-row'));
+    const plantRows = fixture.debugElement.queryAll(By.css('.plant-page__table-body .plant-page__table-row'));
 
     expect(plantRows.length).toBeGreaterThan(0); // Check that there are plant rows in the DOM
   });

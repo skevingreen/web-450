@@ -36,7 +36,7 @@ describe('GardenListComponent', () => {
     component.gardens = mockGardens;
     fixture.detectChanges(); // Trigger change detection
 
-    const gardenRows = fixture.debugElement.queryAll(By.css('.garden-page table-body .garden-page table-row'));
+    const gardenRows = fixture.debugElement.queryAll(By.css('.garden-page__table-body .garden-page__table-row'));
     expect(gardenRows.length).toBeGreaterThan(0); // Check that there are garden rows in the DOM
   });
 

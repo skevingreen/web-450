@@ -108,7 +108,7 @@ styles: `
     display: inline-block;
     margin: 10px 2px;
     cursor: pointer;
-    border-radius: 5px
+    border-radius: 5px;
     transition: background-color 0.3s;
   }
 

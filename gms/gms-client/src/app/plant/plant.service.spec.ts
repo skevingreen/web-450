@@ -57,7 +57,7 @@ describe('PlantService', () => {
       expect(plant).toEqual(mockResponse);
     });
 
-    const req = httpMock.expectOne(`${environment.apiBaseUrl}/api/plants`);
+    const req = httpMock.expectOne(`${environment.apiBaseUrl}/api/plants/1`);
 
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(newPlant);
