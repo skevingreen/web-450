@@ -2,16 +2,28 @@ import { Component } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { Garden } from '../garden';
 import { CommonModule } from '@angular/common';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-
+import { debounceTime, map, of } from 'rxjs';
 @Component({
   selector: 'app-garden-list',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule],
   template: `
     <div class="garden-page">
       <h1 class="garden-page__title">Garden List</h1>
+
+      <div class="garden-page__search-container">
+        <input type="text" placeholder="Search gardens by name" [formControl]="txtSearchControl" class="garden-page__search" />
+      </div>
+
       <button class="garden-page__button" routerLink="/gardens/add">Add Garden</button>
+
+      @if (serverMessage) {
+        <div [ngClass]="{'message-alert': serverMessageType === 'error', 'message-success': serverMessageType === 'success'}" >
+          {{ serverMessage }}
+        </div>
+      }
 
       @if (gardens && gardens.length > 0) {
         <table class="garden-page__table">
@@ -135,12 +147,27 @@ styles: `
     background-color: #dﬀ0d8;
     border-color: #d6e9c6;
   }
+
+  .garden-page__search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .garden-page__search {
+    flex: 1;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
 `
 })
 export class GardenListComponent {
   gardens: Garden[] = [];
+  allGardens: Garden[] = [];
   serverMessage: string | null = null;
   serverMessageType: 'success' | 'error' | null = null;
+
+  txtSearchControl = new FormControl('');
 
   constructor(private gardenService: GardenService) {
     this.gardenService.getGardens().subscribe({
@@ -152,6 +179,12 @@ export class GardenListComponent {
         console.error(`Error occurred while retrieving gardens: ${err}`);
       }
     });
+
+    this.txtSearchControl.valueChanges.pipe(debounceTime(500)).subscribe(val => this.filterGardens(val || ''));
+  }
+
+  filterGardens(name: string) {
+    this.gardens = this.allGardens.filter(g => g.name.toLowerCase().includes(name.toLowerCase()));
   }
 
   deleteGarden(gardenId: number) {
