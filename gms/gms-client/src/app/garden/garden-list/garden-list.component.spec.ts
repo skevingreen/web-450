@@ -7,7 +7,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 
-describe('GardenListComponent', () => { let component: GardenListComponent;
+describe('GardenListComponent', () => {
+  let component: GardenListComponent;
   let fixture: ComponentFixture<GardenListComponent>;
   let gardenService: GardenService;
 

@@ -179,6 +179,6 @@ export class GardenListComponent {
     setTimeout(() => {
       this.serverMessage = null;
       this.serverMessageType = null;
-    }, 3000)
+    }, 3100)
   }
 }

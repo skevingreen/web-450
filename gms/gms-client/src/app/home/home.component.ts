@@ -51,9 +51,10 @@ import { environment } from '../../environments/environment';
   `]
 })
 export class HomeComponent {
-  serverMessage: string;
+  //serverMessage: string;
 
   constructor(private http: HttpClient) {
+    /*
     this.serverMessage = '';
 
     // Simulate a server request that takes 2 seconds to complete
@@ -67,5 +68,6 @@ export class HomeComponent {
         }
       });
     }, 2000);
+    */
   }
 }
