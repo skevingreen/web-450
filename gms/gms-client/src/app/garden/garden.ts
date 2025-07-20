@@ -8,5 +8,5 @@ export interface Garden {
   dateModified?: string;
 }
 
-export type UpdateGardenDTO = Omit<Garden, '_id' | 'gardenId' | 'dateCreated' | 'dateModiﬁed'>;
-export type AddGardenDTO = Omit<Garden, '_id' | 'gardenId' | 'dateModiﬁed'>;
+export type UpdateGardenDTO = Omit<Garden, '_id' | 'gardenId' | 'dateCreated' | 'dateModified'>;
+export type AddGardenDTO = Omit<Garden, '_id' | 'gardenId' | 'dateModified'>;

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HighlightRecentDirective } from '../highlight-recent.directive';
+
 @Component({
   selector: 'app-plant-list',
   standalone: true,

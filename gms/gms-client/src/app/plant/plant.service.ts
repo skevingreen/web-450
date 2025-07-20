@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Plant, AddPlantDTO, UpdatePlantDTO } from './plant';
-import { GardenService } from '../garden/garden.service';
-import { Garden } from '../garden/garden';
 
 @Injectable({
   providedIn: 'root'

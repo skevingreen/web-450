@@ -4,7 +4,8 @@ import { Garden } from '../garden';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { debounceTime, map, of } from 'rxjs';
+import { debounceTime } from 'rxjs';
+
 @Component({
   selector: 'app-garden-list',
   standalone: true,
@@ -55,7 +56,7 @@ import { debounceTime, map, of } from 'rxjs';
           </tbody>
         </table>
       } @else {
-        <p class="garden-page__no-gardens">No gardens found, consider adding one...</p>"
+        <p class="garden-page__no-gardens">No gardens found, consider adding one...</p>
       }
     </div>
 `,

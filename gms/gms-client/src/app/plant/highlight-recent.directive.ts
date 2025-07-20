@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightRecent]',
@@ -12,7 +12,7 @@ export class HighlightRecentDirective {
   ngOnInit(): void {
     const plantedDate = new Date(this.appHighlightRecent);
     const currentDate = new Date();
-    const diffDays = Math.ceil((currentDate.getTime() -plantedDate.getTime()) / (1000 * 3600 * 24));
+    const diffDays = Math.ceil((currentDate.getTime() - plantedDate.getTime()) / (1000 * 3600 * 24));
 
     if (diffDays <= 30) {
       this.el.nativeElement.style.backgroundColor = '#90EE90';

@@ -7,8 +7,8 @@ export interface Plant {
   datePlanted?: string;
   dateHarvested?: string;
   dateCreated?: string;
-  dateModiﬁed?: string;
+  dateModified?: string;
 }
 
-export type AddPlantDTO = Omit<Plant, '_id' | 'gardenId' | 'dateHarvested' | 'dateCreated' | 'dateModiﬁed'>;
-export type UpdatePlantDTO = Omit<Plant, '_id' | 'gardenId' | 'datePlanted' | 'dateHarvested' | 'dateCreated' | 'dateModiﬁed'>;
+export type AddPlantDTO = Omit<Plant, '_id' | 'gardenId' | 'dateHarvested' | 'dateCreated' | 'dateModified'>;
+export type UpdatePlantDTO = Omit<Plant, '_id' | 'gardenId' | 'datePlanted' | 'dateHarvested' | 'dateCreated' | 'dateModified'>;

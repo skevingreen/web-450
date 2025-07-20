@@ -5,8 +5,7 @@ import { Plant } from '../plant';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
-import { of } from 'rxjs';
-import { throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('PlantListComponent', () => {
   let component: PlantListComponent;
