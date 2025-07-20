@@ -3,7 +3,6 @@ const { Garden } = require('../models/garden');
 const { Plant } = require('../models/plant');
 
 // Connect to MongoDB
-//const connectionString = 'mongodb+srv://gms_user:s3cret@cluster0.lujih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const connectionString = 'mongodb+srv://gms_user:ZilsSUvq53DIks5y@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
 
 const dbName = 'gms';

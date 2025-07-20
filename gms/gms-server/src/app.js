@@ -7,7 +7,6 @@
 
 // require statements
 const express = require('express');
-const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
@@ -23,7 +22,6 @@ let app = express();
 
 // Mongoose connection
 const connectionString = 'mongodb+srv://gms_user:ZilsSUvq53DIks5y@bellevueuniversity.qgo4d.mongodb.net/?retryWrites=true&w=majority&appName=BellevueUniversity';
-//const connectionString = 'mongodb+srv://gms_user:s3cret@cluster0.lujih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'gms'; // Database name
 
 // Function to connect to the database
